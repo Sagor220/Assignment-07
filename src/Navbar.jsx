@@ -1,7 +1,10 @@
+import { NavLink } from "react-router-dom";
+import { Home, Clock, BarChart2 } from "lucide-react";
+
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-sm text-[#244d3f]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,51 +29,93 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-[#244d3f] text-white font-semibold rounded-lg"
+                      : ""
+                  }
+                  to="/"
+                >
+                  <Home className="w-5 h-5" />
+                  Home
+                </NavLink>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-[#244d3f] text-white font-semibold rounded-lg"
+                      : ""
+                  }
+                  to="/timeline"
+                >
+                  <Clock className="w-5 h-5" />
+                  Timeline
+                </NavLink>
               </li>
               <li>
-                <a>Item 3</a>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-[#244d3f] text-white font-semibold rounded-lg"
+                      : ""
+                  }
+                  to="/stats"
+                >
+                  <BarChart2 className="w-5 h-5" />
+                  Stats
+                </NavLink>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <div className="text-xl">
+            <span className="font-bold text-[#1f2937] ">Keen</span>
+            <span className="font-semibold text-[#244d3f]">Keeper</span>
+          </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-[#244d3f] text-white font-semibold rounded-lg"
+                    : ""
+                }
+                to="/"
+              >
+                <Home className="w-5 h-5" />
+                Home
+              </NavLink>
             </li>
             <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2 bg-base-100 w-40 z-1">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-[#244d3f] text-white font-semibold rounded-lg"
+                    : ""
+                }
+                to="/timeline"
+              >
+                <Clock className="w-5 h-5" />
+                Timeline
+              </NavLink>
             </li>
             <li>
-              <a>Item 3</a>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-[#244d3f] text-white font-semibold rounded-lg"
+                    : ""
+                }
+                to="/stats"
+              >
+                <BarChart2 className="w-5 h-5" />
+                Stats
+              </NavLink>
             </li>
           </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
         </div>
       </div>
     </div>
