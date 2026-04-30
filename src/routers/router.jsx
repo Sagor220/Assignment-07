@@ -11,6 +11,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
+
     children: [
       {
         index: true,
@@ -25,10 +26,10 @@ const router = createBrowserRouter([
         path: "/stats",
         Component: StatesPage,
       },
-      {
-        path: "*",
-        Component: NotFoundPage,
-      },
+      // {
+      //   path: "*",
+      //   Component: NotFoundPage,
+      // },
       {
         path: "friends/:friendId",
         loader: async ({ params }) => {
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { path: "*", Component: NotFoundPage },
 ]);
 
 export default router;

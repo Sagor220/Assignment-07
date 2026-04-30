@@ -5,7 +5,7 @@ const FriendsSection = ({ frndsData }) => {
   const friends = use(frndsData);
 
   return (
-    <div className="max-w-275 mx-auto">
+    <div className="max-w-275 mx-auto my-10 mb-20">
       <h2 className="text-2xl font-bold">Your Friends</h2>
       <div className="grid grid-cols-4 gap-4">
         {friends.map((friend) => (

@@ -1,6 +1,6 @@
-import { Suspense } from "react";
 import FriendsSection from "../components/HeroSection/FriendsSection.jsx";
 import HeroSection from "../components/HeroSection/HeroSection.jsx";
+import FriendSummery from "../components/HeroSection/FriendSummery.jsx";
 
 const frndsjsonData = async () => {
   const response = await fetch("/friends.json");
@@ -12,10 +12,8 @@ const frndsData = frndsjsonData();
 const Homepage = () => {
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <HeroSection />
-      </Suspense>
-
+      <FriendSummery />
+      <HeroSection />
       <FriendsSection frndsData={frndsData} />
     </div>
   );
