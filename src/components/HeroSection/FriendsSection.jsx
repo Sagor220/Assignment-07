@@ -4,7 +4,6 @@ import FriendCard from "./FriendCard";
 const FriendsSection = ({ frndsData }) => {
   const friends = use(frndsData);
 
-  console.log(friends);
   return (
     <div className="max-w-275 mx-auto">
       <h2 className="text-2xl font-bold">Your Friends</h2>

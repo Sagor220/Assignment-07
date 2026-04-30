@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import FriendsSection from "../components/HeroSection/FriendsSection.jsx";
 import HeroSection from "../components/HeroSection/HeroSection.jsx";
 
@@ -7,11 +8,14 @@ const frndsjsonData = async () => {
 };
 
 const frndsData = frndsjsonData();
-console.log(frndsData);
+
 const Homepage = () => {
   return (
     <div>
-      <HeroSection />
+      <Suspense fallback={<div>Loading...</div>}>
+        <HeroSection />
+      </Suspense>
+
       <FriendsSection frndsData={frndsData} />
     </div>
   );
